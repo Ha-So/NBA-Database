@@ -1,0 +1,64 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+*  NBA Database Project  
+* 
+ -->
+<center>
+<h1>Update {{star.fname}} {{star.lname}}:</h1>
+<h3>INFO: You can remove any relationship by setting it to NULL.</h3>
+ <div class = "forms">
+<form id="update-player" action="/players" method="post">
+ First name: <input type="text" name="fname" value="{{star.fname}}" id ="exName"><br>
+    Last name: <input type="text" name="lname" value="{{star.lname}}" id ="exName1"><br>
+    Date Drafted: <input type="date" name="date_drafted" value="{{star.date_drafted}}" ><br>
+    Age: <input type="number" name="current_age" value="{{star.current_age}}" id="ag"><br>
+   PPG: <input type="number" name="ppg" value="{{star.ppg}}" id="pg"><br>
+
+   Current Team: <select name="current_team" id="team-selector1"> 
+    <option value =''>NO TEAM/NULL</option>
+        {{#each teams}}
+        <option value="{{id}}">{{name}}</option>
+            {{/each}}
+    </select><br>
+    Draft Team: <select name="draft_team" id = "team-selector2"> 
+     <option value =''>NO TEAM/NULL</option>
+        {{#each teams}}
+        <option value="{{id}}">{{name}}</option>
+            {{/each}}
+    </select><br>
+
+    <!--Test drop down for relationships -->
+     Position: <select name="title" id = "team-selector3"> 
+      <option value =''>NO POSITION/NULL</option>
+        {{#each position}}
+        <option value="{{id}}">{{title}}</option>
+            {{/each}}
+    </select><br>
+   
+</form>
+<button onClick = "return invalid()">Update</button>
+</div>
+</center>
+<script defer>selectTeam1({{star.current_team}});</script>
+<script defer>selectTeam2({{star.draft_team}});</script>
+<script defer>selectTeam3({{pos.position_id}});</script>
+<script>
+    function invalid()
+        {
+          name = document.getElementById("exName").value;
+           name1 = document.getElementById("exName1").value;
+           ag1 = document.getElementById("ag").value;
+           pg1 = document.getElementById("pg").value;
+          if (name == '' || name1 == '' || ag1 == '' || pg1 == '') 
+           { 
+              alert("Cannot leave those input fields empty.");
+              return false; 
+           }
+           else
+           {
+            updatePlayer({{star.id}});
+            return true; 
+           }
+        }
+</script>

@@ -1,0 +1,47 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+*  NBA Database Project  ns 
+* 
+ -->
+ 
+ <center>
+<h1>NBA PLAYER DATABASE</h1> 
+<br>
+
+<a href="/players/">Database Home</a>
+<a href="/players/searchPlayer/">Search Players</a>
+<a href="/players/searchTeam/">Search Teams</a>
+<a href="/players/searchTeamP/">Search Players and Teams Relationship</a>
+<a href="/players/searchPlayerP/">Search Players and Positions Relationship</a>
+
+
+<br>
+ <h2>Player Search By Name</h1>
+ <!-- What rows to select -->
+    <h3>  INFO: Filter table to find all players who have an age greater than the specified value and are currently on a team founded after the specifed year. </h3>
+     <div class = "forms">
+    <form id="viewTeamPlayer" action="/players/searchTeamPResult" method="post">
+    Player Age Greater than: <input type="number" name="current_age" id="ag"><br>
+    Currently On Team founded after:  <input type="number" name="year_founded" id="year"><br>
+    <input type="submit" value="Submit" onClick ="return invalid()">
+    </form>
+
+ </div>
+<script>
+    function invalid()
+        {
+          ag = document.getElementById("ag").value;
+          year = document.getElementById("year").value;
+          if (ag == '' || year == '') 
+           { 
+              alert("Cannot leave those input fields empty.");
+              return false; 
+           }
+           else
+           {
+            return true; 
+           }
+        }
+</script>
+</center> 

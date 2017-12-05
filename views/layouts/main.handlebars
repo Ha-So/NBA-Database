@@ -1,0 +1,58 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+* NBA Database Project  
+ -->
+
+<!doctype html>
+<html>
+<head>
+	<title>NBA Database</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}
+</head>
+<body>
+<style>
+	.forms{ color: white;
+    		text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+			font-family: "Cutive Mono";
+		}
+
+	body{ 
+  			background-color: #696969;
+  		}
+
+
+	table, th, td{border: 1px solid white;
+				 color: white;
+    			text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+				font-family: "Cutive Mono";
+
+			}
+
+
+	h1, h2, h3{ color: white;
+    			text-shadow: 2px 0 black, 0 2px black, 2px 0 black, 0 2px black;
+				font-family: "Cutive Mono";
+
+			}
+			a{
+				padding-left:5px;
+				padding-right: 5px;
+				text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+			}
+	a:link{color:#1ac6ff;
+	}
+	a:visited{color:#ff8c1a;
+	}
+	a:hover{color:#ccebff;
+}
+	a:active{color:#ccebff;
+	}
+</style>
+	{{{body}}}
+</body>
+<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+</html>

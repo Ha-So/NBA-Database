@@ -1,0 +1,48 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+*  NBA Database Project   
+* 
+ -->
+
+ <center>
+<h1>NBA PLAYER DATABASE</h1> 
+<br>
+
+<a href="/players/">Database Home</a>
+<a href="/players/searchPlayer/">Search Players</a>
+<a href="/players/searchTeam/">Search Teams</a>
+<a href="/players/searchTeamP/">Search Players and Teams Relationship</a>
+<a href="/players/searchPlayerP/">Search Players and Positions Relationship</a>
+
+
+<br>
+ <h2>Player Search By Name</h1>
+ <!-- What rows to select -->
+     <h3> INFO: Filter table to find all players with the same first name. </h3>
+      <div class = "forms">
+    <form id="viewplayer" action="/players/searchPlayerResult" method="post">
+    First name: <input type="text" name="fname" id = "exName"><br>
+
+    <input type="submit" value="Submit" onClick="return invalid()">
+    </form>
+    </div>
+ 
+</center> 
+
+<script>
+    function invalid()
+        {
+          name = document.getElementById("exName").value;
+    
+          if (name == '') 
+           { 
+              alert("Cannot leave those input fields empty.");
+              return false; 
+           }
+           else
+           {
+            return true; 
+           }
+        }
+</script>

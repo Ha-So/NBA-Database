@@ -1,0 +1,36 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+*  NBA Database Project  
+* 
+ -->
+
+ <center>
+<h1>NBA PLAYER DATABASE</h1> 
+<br>
+
+<a href="/players/">NBA Players</a>
+<a href="/players/teams1/">NBA Teams</a>
+<a href="/players/stadiums/">NBA Stadiums</a>
+<a href="/players/positions/">NBA Positions</a>
+<a href="/players/player-position/">NBA Players and Positions</a>
+<a href="/players/search/">Filter and Search</a>
+<br>
+ <h2>Current Table: NBA Stadiums</h1>
+ <table>
+    <thead> 
+        <th>Name</th> 
+        <th>Seating Capacity</th> 
+        <th>State</th>  
+    </thead> 
+    <tbody> 
+        {{#each stadium}} 
+        <tr> 
+            <td>{{name}}</td> 
+            <td>{{seating}}</td> 
+            <td>{{state}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+    </table>
+</center> 

@@ -1,0 +1,95 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+*  NBA Database Project 
+* 
+ -->
+
+<center>
+<h1>NBA PLAYER DATABASE</h1> 
+<br>
+<a href="/players/">NBA Players</a>
+<a href="/players/teams1/">NBA Teams</a>
+<a href="/players/stadiums/">NBA Stadiums</a>
+<a href="/players/positions/">NBA Positions</a>
+<a href="/players/player-position/">NBA Players and Positions</a>
+<a href="/players/search/">Filter and Search</a>
+<h2>Current Table: NBA Players</h2>
+<h3>INFO: To remove/change a relationship you must go to the edit page for a row.</h3>
+
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Draft Date</th>
+        <th>Age</th>
+        <th>Points Per Game</th>
+        <th>Current Team</th>  
+         <th>Draft Team</th> 
+    </thead> 
+    <tbody> 
+        {{#each plays}} 
+        <tr> 
+            <td>{{fname}}</td> 
+            <td>{{lname}}</td> 
+            <td>{{date_drafted}}</td> 
+            <td>{{current_age}}</td>
+            <td>{{ppg}}</td>
+            <td>{{current_team}}</td>  
+            <td>{{draft_team}}</td> 
+            <td><button onclick="deletePlayer({{id}})">Delete</button></td>
+            <td><a href="/players/{{id}}">Edit</a></td>
+                
+        </tr> 
+         {{/each}} 
+                  
+                
+    </tbody> 
+    <div class = "forms">
+    <form id="addplayer" action="/players" method="post">
+    First name: <input type="text" name="fname" id="exName"><br>
+    Last name: <input type="text" name="lname" id = "exName1"><br>
+    Date Drafted: <input type="date" name="date_drafted"><br>
+    Age: <input type="number" name="current_age" id = "ag"><br>
+    PPG: <input type="number" name="ppg" id ="pg"><br>
+   
+
+   Current Team: <select name="current_team"> 
+             <option value =''>NO TEAM/NULL</option>
+        {{#each teams}}
+
+        <option value="{{id}}">{{name}}</option>
+            {{/each}}
+    </select><br>
+    Draft Team: <select name="draft_team"> 
+     <option value =''>NO TEAM/NULL</option>
+        {{#each teams}}
+        <option value="{{id}}">{{name}}</option>
+            {{/each}}
+    </select><br>
+
+    <input type="submit" value="Submit" onClick = "return invalid()">
+    </form>
+    </div>
+<br>
+
+</table> 
+</center>
+<script>
+    function invalid()
+        {
+          name = document.getElementById("exName").value;
+           name1 = document.getElementById("exName1").value;
+           ag1 = document.getElementById("ag").value;
+           pg1 = document.getElementById("pg").value;
+          if (name == '' || name1 == '' || ag1 == '' || pg1 == '') 
+           { 
+              alert("Cannot leave those input fields empty.");
+              return false; 
+           }
+           else
+           {
+            return true; 
+           }
+        }
+</script>

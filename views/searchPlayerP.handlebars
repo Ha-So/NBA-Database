@@ -1,0 +1,51 @@
+<!--
+* Name: Haris Sohail
+* Date: 11/26/2017
+*  NBA Database Project  
+* 
+ -->
+
+ <center>
+<h1>NBA PLAYER DATABASE</h1> 
+<br>
+
+<a href="/players/">Database Home</a>
+<a href="/players/searchPlayer/">Search Players</a>
+<a href="/players/searchTeam/">Search Teams</a>
+<a href="/players/searchTeamP/">Search Players and Teams Relationship</a>
+<a href="/players/searchPlayerP/">Search Players and Positions Relationship</a>
+
+
+<br>
+ <h2>Player Search By PPG and Position played</h1>
+ <!-- What rows to select -->
+     <h3> INFO:  Filter table to find all players with at least the specified PPG and who play a certain position. </h3>
+      <div class = "forms">
+    <form id="viewTeamPlayer" action="/players/searchPlayerPResult" method="post">
+    Player PPG at least: <input type="number" name="ppg" id="pg"><br>
+       Position played: <select name="title" id="position"> 
+        {{#each position}}
+        <option value="{{id}}">{{title}}</option>
+            {{/each}}
+    </select><br>
+    <input type="submit" value="Submit" onClick="return invalid()">
+    </form>
+</div>
+<script>
+    function invalid()
+        {
+          pg = document.getElementById("pg").value;
+          pos = document.getElementById("position").value;
+          if (pg == '' || pos == '') 
+           { 
+              alert("Cannot leave those input fields empty.");
+              return false; 
+           }
+           else
+           {
+            return true; 
+           }
+        }
+</script>
+ 
+</center> 
