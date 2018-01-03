@@ -4,7 +4,17 @@ Database Project
 This application uses an entity relationship model to create an NBA database. It utlizes MySQL (MariaDB), jQuery, JavaScript, HTML, CSS to create a user interface where they can view, add, delete, search/filter and edit entities. 
 
 Further the backend is provided for by Node.js and the frontend uses an express and handlebars template system. 
- 
+
+# Diagrams
+
+- ER Diagram
+
+![screenshot](pics/erDiagram.PNG)
+
+
+- Schema
+
+![screenshot](pics/schema.PNG)
 
 # Screenshots
 
