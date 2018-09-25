@@ -5,6 +5,8 @@ This application uses an entity relationship model to create an NBA database. It
 
 Further the backend is provided for by Node.js and the frontend uses an express and handlebars template system. 
 
+This application is connected to - https://github.com/Ha-So/TRUE-NBA-web-app
+
 # Diagrams
 
 - ER Diagram
